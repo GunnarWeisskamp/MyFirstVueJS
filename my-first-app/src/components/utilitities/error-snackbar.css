@@ -1,0 +1,18 @@
+.mat-snack-bar-container {
+    color: white;
+    
+    background-color: darkgoldenrod;
+    margin: 24px;
+    max-width: 568px;
+    min-width: 288px;
+    padding: 14px 24px;
+    transform: translateY(100%) translateY(24px);
+  }
+ 
+  .error-snackbar {
+    background: red;
+  }
+
+  .valid-snackbar {
+    background: darkgoldenrod;
+  }

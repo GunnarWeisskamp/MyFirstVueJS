@@ -1,0 +1,30 @@
+<div>
+  <div class="container">
+    <h2>Dispaly All Doctors</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Full Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Type Of Doctor</th>
+          <th scope="col">Gender</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in doctors" :key="item.id">
+          <td>{{item.fullName}}</td>
+          <td>{{item.age}}</td>
+          <td>{{item.typeOfDoctor}}</td>
+          <td>
+            <div v-if="item.gender == true">
+              Male
+            </div>
+            <div v-else>
+                Female
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,22 +1,25 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/> -->
-    <HelloWorld></HelloWorld><br>
-    <ShowStudent></ShowStudent>
-  </div>
+<div>
+  <HomeCom></HomeCom>
+</div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.ts';
-import ShowStudent from '@/components/ShowStudent.ts';
+import HomeCom from '@/components/HomeCom.ts';
 
 @Component({
   components: {
-    HelloWorld,
-    ShowStudent,
+HomeCom
   },
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  //let a = this.$route.query.page;
+  // public a:string = "sss";
+  // public b:string = "gg";
+  //  mounted() {
+  //     this.a = this.$route.fullPath;//query.page;
+  //     this.b = "dd";
+  //     }
+}
 </script>

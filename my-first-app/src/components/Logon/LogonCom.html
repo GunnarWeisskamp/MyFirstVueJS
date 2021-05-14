@@ -1,0 +1,13 @@
+<div>
+    <span
+      style="margin-left: 20px;"
+      v-for="suggestedName of suggestedUserNamesFromChild"
+      :key="suggestedName">
+      {{suggestedName}}</span>
+
+    <form @submit.prevent="handleSubmit()">
+      <label for="userName">Enter user name</label>
+      <input type="text" v-model="userName" id="userName" name="userName">
+      <button type="submit">Submit</button>
+    </form>
+  </div>

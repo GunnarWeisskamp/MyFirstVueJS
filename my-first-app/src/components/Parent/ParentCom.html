@@ -1,0 +1,7 @@
+<div>Hello
+    <Child v-bind:suggestedUserNamesFromChild="suggestedUserNamesFromParent" @changeUserName="changeUserName($event)"/>
+    <div v-if="userName" id="userInfo">
+      Great!
+      <span style="color: green; font-size: 1.5em;">{{ userName}}</span> is available!
+    </div>
+  </div>
