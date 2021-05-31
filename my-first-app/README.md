@@ -1,24 +1,15 @@
-# my-first-app
+Vue areas covered
+--------------------------------
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1 - if, for, event binding, v-model, class binding
+2 - Routing, Routing redirect, router-link
+3 - Component creation
+4 - Service creation
+5 - Get, Post http actions
+6 - Life cycle hooks
+7 - Prop (used in component interaction)
+8 - Passing values globaly between components Event Bus
+9 - Component interaction
+10 - Validation
+11 - @emit, @provide, @inject (provide and inject used
+     with component interaction)

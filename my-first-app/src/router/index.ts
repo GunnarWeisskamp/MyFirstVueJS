@@ -1,10 +1,17 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
 import Home from '../views/Home.vue';
+import App from '../App.vue';
 
 Vue.use(VueRouter);
 
 const routes: RouteConfig[] = [
+  {
+    //path: '/',
+    path: '/',
+    name: 'App',
+    component: App,
+  },
   {
     //path: '/',
     path: '/home/:userName?',
@@ -35,9 +42,19 @@ const routes: RouteConfig[] = [
     component: () => import(/* webpackChunkName: "testItems" */ '../views/TestItems.vue'),
   },
   {
+    path: '/injectProvide',
+    name: 'injectProvide',
+    component: () => import(/* webpackChunkName: "injectProvide" */ '../views/InjectProvide.vue'),
+  },
+  {
     path: '/logon',
     name: 'logon',
     component: () => import(/* webpackChunkName: "logon" */ '../views/Logon.vue'),
+  },
+  {
+    path: '/logout',
+    name: 'logout',
+    component: () => import(/* webpackChunkName: "logout" */ '../views/Logout.vue'),
   },
 ];
 

@@ -29,7 +29,6 @@ export default class ParentCom extends Vue {
             this.userName = userName;
             Vue.prototype.$gunnarName = "";
             this.$router.push({ name: 'Home', params: { userName: userName } })
-            //router.push({ name: 'user', params: { userId: '123' } })
         }
        
     }

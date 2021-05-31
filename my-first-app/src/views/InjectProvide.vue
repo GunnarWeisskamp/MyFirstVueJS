@@ -1,16 +1,16 @@
 <template>
 <div>
-  <HomeCom></HomeCom>
+  <ParentCom></ParentCom><br>
 </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HomeCom from '@/components/HomeCom.ts';
+import ParentCom from '@/components/InjectProvide/ParentCom.ts';
 
 @Component({
   components: {
-HomeCom
+    ParentCom
   },
 })
 export default class Home extends Vue {

@@ -9,11 +9,16 @@ import WithRender from './TestItemsCom.html';
 export default class TestItemsCom extends Vue {
     public msg: string = 'Test Item View';
     public mouseEnterValue: string = "";
-    //@Prop({required: false}) readonly age: number = 14;
-
-
-    @Prop({ default: 'Input Property' })
-    exampleProperty!: string
+    public errorHasHappened:string = "";
+    @Prop({ 
+         required:true, type:String, 
+         default: 'This is the value from child', 
+         validator:function(value)
+         { 
+            return myValidatorTest(value);
+         }
+        })
+    componentValuePassedFromChild!: string
 
     mouseOverEvent(data:string){
         alert(data);
@@ -30,6 +35,18 @@ export default class TestItemsCom extends Vue {
     mouseEnter(){
         alert(this.mouseEnterValue);
     }
+    
     mounted() {   
+    }
+}
+
+function myValidatorTest(value:string): boolean {
+    if(value === "value from adult") 
+    {
+        return true;
+    }
+    else
+    {
+        return false;
     }
 }

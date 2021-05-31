@@ -1,13 +1,16 @@
 <div>
     <span
       style="margin-left: 20px;"
-      v-for="suggestedName of suggestedUserNamesFromChild"
+      v-for="suggestedName of testUserNames"
       :key="suggestedName">
       {{suggestedName}}</span>
 
-    <form @submit.prevent="handleSubmit()">
+    <form @submit="LogOn($event)" novalidate="true">
       <label for="userName">Enter user name</label>
       <input type="text" v-model="userName" id="userName" name="userName">
-      <button type="submit">Submit</button>
+      <div v-if="userNameRequired">
+        Please enter a user name
+      </div><br>
+      <button>Submit</button>
     </form>
   </div>

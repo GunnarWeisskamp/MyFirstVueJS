@@ -1,18 +1,14 @@
 <div>
     <div id="nav">
-        <!-- <a href="/home">Home</a> |
-        <a href="/about">About</a> |
-        <a href="/doctors">Displany all doctors</a> |
-        <a href="/doctorsInsert">Create a new doctor</a> |
-        <a href="/testItems">Test Items</a> |
-        <a href="/logon">Logon Page</a> | -->
-        <router-link to="/home">Home</router-link> |
-        <router-link to="/about">About</router-link> |
-        <router-link to="/doctors">Display All Doctors</router-link> |
-        <router-link to="/doctorInsert">Create a new Doctor</router-link> |
-        <router-link to="/testItems">Test Items</router-link> |
-        <router-link to="/logon">Logon Page</router-link>
-        {{ this.$gunnarName}}
+        <router-link to="/home">Home |</router-link>
+        <router-link to="/about" v-if="isLoggeOn">About |</router-link>
+        <router-link to="/doctors" v-if="isLoggeOn">Display All Doctors |</router-link>
+        <router-link to="/doctorInsert" v-if="isLoggeOn">Create a new Doctor |</router-link>
+        <router-link to="/testItems" v-if="isLoggeOn">Test Items |</router-link>
+        <router-link to="/injectProvide" v-if="isLoggeOn">Inject Provide Example |</router-link>
+        <router-link to="/logon" v-if="!isLoggeOn">Logon Page</router-link>
+        <router-link to="/logout" v-if="isLoggeOn">Log Out</router-link>
+        {{ userNewName}}
     </div>
     <router-view/>
    

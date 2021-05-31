@@ -1,15 +1,13 @@
 <div>
 {{msg}}<br>
 
-Mouse Over: <button v-on:mouseover="mouseOverEvent('helloMouseOver')">Hover Over</button><br>
-Mouse Click: <button v-on:click="mouseClick($event)">Mouse Click</button><br>
+Mouse Over Example: <button v-on:mouseover="mouseOverEvent('helloMouseOver')">Hover Over</button><br><br>
+Mouse Click: <button v-on:click="mouseClick($event)">Mouse Click</button><br><br>
 
-Mouse Enter: <button v-on:mouseenter="mouseEnter()">Mouse Enter</button><br>
-<input v-model="mouseEnterValue" type="text" placeholder="Enter Mouse Enter Data"><br>
-Key Event : <button v-on:keyup.page-down="keyUpPageDown()">Key Down</button>
-<br>
-
-<input exampleProperty type="text">
-
-{{exampleProperty}}
+Mouse Enter: <button v-on:mouseenter="mouseEnter()">Mouse Enter</button><br><br>
+<input v-model="mouseEnterValue" type="text" placeholder="Enter Mouse Enter Data"><br><br>
+Key Event (Give button focus and then click on the Page Down button): <button v-on:keyup.page-down="keyUpPageDown()">Key Down</button><br><br>
+@Prop Example
+<input  v-bind:value="componentValuePassedFromChild" type="text"><br>
+<button>Click Me</button>
 </div>

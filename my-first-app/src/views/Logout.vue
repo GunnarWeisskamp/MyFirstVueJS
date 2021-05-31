@@ -1,17 +1,17 @@
 <template>
   <div class="home">
-    <LogonCom></LogonCom><br>
+    <LogoutCom></LogoutCom><br>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import LogonCom from '@/components/Logon/LogonCom.ts';
+import LogoutCom from '@/components/Logout/LogoutCom.ts';
 
 @Component({
   components: {
-    LogonCom,
+    LogoutCom,
   },
 })
-export default class Logon extends Vue {}
+export default class Logout extends Vue {}
 </script>

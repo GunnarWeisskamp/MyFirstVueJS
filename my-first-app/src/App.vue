@@ -1,21 +1,18 @@
 <template>
   <div id="app">
     <NavigationCom></NavigationCom>
+
   </div>
 </template>
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import NavigationCom from '@/components/Navigation/NavigationCom.ts';
-
 @Component({
   components: {
     NavigationCom,
   },
 })
 export default class App extends Vue {
-  mounted(){
-    //alert('nav');
-  }
 }
 </script>
 

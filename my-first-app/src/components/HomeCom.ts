@@ -9,26 +9,16 @@ import User from '@/types/User';
     components: { Child }
 })
 export default class HomeCom extends Vue {
-//public a:string = "";
-    //$auth.isAuthenticated
-      //let a = this.$route.query.page;
-   
+  public msgTwo:string = "";
   public a!:string;
-  //public doctors: Doctor[] = [];
   public b:string = "";
   exampleProperty!: string
-  
-    //$user: any;
-   mounted() {
-      //this.a = this.$route.fullPath;//query.page;
-      
-      this.a = this.$route.params.userName.toString()
-      Vue.prototype.$gunnarName = this.a;
-      this.b = Vue.prototype.$gunnarName;
-      //$user.userName
-     //this.$us
-            //if()
-      //window.hostname = 'foo';
+  public userName:string = "";
+  mounted() {
+      this.userName = (this.$route.params.userName.toString() !== "") ?this.$route.params.userName.toString() : "";
+      if(this.userName !== "")
+      {
+        this.$root.$emit('loggedOn', this.userName)
       }
-   
+    }
 }

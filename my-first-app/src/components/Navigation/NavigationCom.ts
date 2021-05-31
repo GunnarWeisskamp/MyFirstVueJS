@@ -9,30 +9,20 @@ import LogonCom from '../Logon/LogonCom'
     components: { LogonCom }
 })
 export default class NavigationCom extends Vue {
-    //mounted(){}
-    beforeCreate(){
-        alert("aaa")
-    }
-    suggestedUserNamesFromParent = ["AtomicKing", "MoonSideWalk", "RedSky"];
-    userName: string = "sad";
-    changeUserName(userName: string) 
-    {
-        let found: boolean = false;
-        this.suggestedUserNamesFromParent.forEach(el => {
-            if(el === userName)
+    userNewName: string = "";
+    isLoggeOn:boolean = false;
+    mounted() {
+        this.$root.$on('loggedOn',(userName: string) => {
+            if(userName !== "logging out")
             {
-                found = true;
+                this.userNewName = userName;
+                this.isLoggeOn = true;
             }
-
+            else
+            {
+                this.userNewName = "";
+                this.isLoggeOn = false;
+            }   
         })
-        if(found)
-        {
-            this.userName = "You cannot use this one"
-        }
-        else
-        {
-            this.userName = userName;
-        }
-       
     }
 }

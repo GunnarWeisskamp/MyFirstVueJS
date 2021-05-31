@@ -7,11 +7,33 @@ import WithRender from './LogonCom.html';
     template: require('./LogonCom.html')
 })
 export default class LogonCom extends Vue {
-    @Prop({ default: [] })
-    suggestedUserNamesFromChild!: string[];
-    userName: string = "";
-    handleSubmit() 
-    {
-      this.$emit("changeUserName", this.userName);
+  testUserNames = ["Bob", "Fred", "Jill"];
+  userName: string = "";
+  userNameRequired: boolean = false;
+
+  LogOn(e: any) 
+  {
+      if(this.userName === "")
+      {
+        this.userNameRequired = true;
+        e.preventDefault();
+        return;
+      }
+      this.userNameRequired = false;
+      let found: boolean = false;
+      this.testUserNames.forEach(el => {
+          if(el === this.userName)
+          {
+              found = true;
+          }
+      })
+      if(found)
+      {
+        this.$router.push({ name: 'Home', params: { userName: this.userName } })
+      }
+      else
+      { 
+        this.userName = "You cannot use this one"
+      }
     }
 }

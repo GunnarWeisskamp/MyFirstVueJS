@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <TestItemsCom></TestItemsCom><br>
+    <TestItemsCom :componentValuePassedFromChild="myAdutlValue"></TestItemsCom><br>
   </div>
 </template>
 
@@ -14,5 +14,7 @@ import TestItemsCom from '@/components/TestItems/TestItemsCom.ts';
     TestItemsCom,
   },
 })
-export default class TestItems extends Vue {}
+export default class TestItems extends Vue {
+  myAdutlValue:string = "value from adult";
+}
 </script>
